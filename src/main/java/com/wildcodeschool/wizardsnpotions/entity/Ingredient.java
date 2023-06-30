@@ -18,12 +18,18 @@ public class Ingredient {
 
     private String name;
 
+    //liaison PotionIngredient
+    @OneToMany(mappedBy = "ingredient", cascade = CascadeType.ALL)
+    private List<PotionIngredient> potionIngredients = new ArrayList<>();
+            
     public Ingredient() {
     }
     
     public Ingredient(String name) {
         this.name = name;
     }
+    
+    
 
    // getters and setters 
    public String getName() {

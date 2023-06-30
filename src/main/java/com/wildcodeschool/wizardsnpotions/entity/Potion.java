@@ -29,6 +29,10 @@ public class Potion {
             joinColumns = @JoinColumn(name = "potion_id"),
             inverseJoinColumns = @JoinColumn(name = "effect_id"))
     private List<Effect> effects = new ArrayList<>();
+    
+    //liaison PotionIngredient
+    @OneToMany(mappedBy = "potion", cascade = CascadeType.ALL)
+    private List<PotionIngredient> potionIngredients = new ArrayList<>();
 
     public Potion() {
     }
