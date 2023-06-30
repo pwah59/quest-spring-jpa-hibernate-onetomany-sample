@@ -22,7 +22,7 @@ public class School {
     private String country;
     
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
-    private List<Wizards> wizards;
+    private List<Wizard> wizards;
 
     public School() {
     }
@@ -66,11 +66,11 @@ public class School {
         this.country = country;
     }
     
-    public List<Wizards> getWizards() {
+    public List<Wizard> getWizards() {
         return wizards;
     }
 
-    public void setWizards(List<Wizards> wizards) {
+    public void setWizards(List<Wizard> wizards) {
         this.wizards = wizards;
     }
 }

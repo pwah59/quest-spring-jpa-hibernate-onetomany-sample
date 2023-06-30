@@ -1,6 +1,6 @@
-package com.wildcodeschool.wildandwizard.repository;
+package com.wildcodeschool.wizardsnpotions.repository;
 
-import com.wildcodeschool.wildandwizard.entity.School;
+import com.wildcodeschool.wizardsnpotions.entity.School;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
