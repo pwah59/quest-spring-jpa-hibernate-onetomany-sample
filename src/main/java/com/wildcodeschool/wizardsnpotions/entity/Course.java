@@ -18,6 +18,10 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    
+    @ManyToMany(mappedBy = "courses")
+    private List<Wizard> wizards = new ArrayList<>();
+
 
     public Course() {
     }
@@ -41,4 +45,12 @@ public class Course {
     public void setName(String name) {
         this.name = name;
     }   
+    
+    public List<Wizard> getWizard() {
+        return wizards;
+    }
+
+    public void setWizard(List<Wizard> wizards) {
+        this.wizards = wizards;
+    }
 }

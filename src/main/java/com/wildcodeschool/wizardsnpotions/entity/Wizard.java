@@ -9,6 +9,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 @Entity
 public class Wizard {
@@ -25,6 +26,13 @@ public class Wizard {
     
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH, optional = false)
     @JoinColumn(name = "id", nullable = false)
+    
+    //liaison avec Course
+    @ManyToMany
+    @JoinTable(name = "wizard_course",
+            joinColumns = @JoinColumn(name = "wizard_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> courses = new ArrayList<>();
     
     private School school;
     
@@ -103,5 +111,13 @@ public class Wizard {
 
     public void setSchool(School school) {
         this.school = school;
+    }
+    
+    public List<Course> getCourse() {
+        return courses;
+    }
+
+    public void setCourse(List<Course> courses) {
+        this.courses = courses;
     }
 }
