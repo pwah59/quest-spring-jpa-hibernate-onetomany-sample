@@ -1,11 +1,14 @@
 package com.wildcodeschool.wizardsnpotions.entity;
 
+
+
 import java.time.*; 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,6 +19,9 @@ public class Effect {
     private Long id;
 
     private String description;
+    
+    @ManyToMany(mappedBy = "effects")
+    private List<Potion> potions = new ArrayList<>();
 
     public Effect() {
     }
